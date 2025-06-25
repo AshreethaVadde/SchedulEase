@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ashuvadde2@gmail.com',
-    pass: 'xrjn xhrg mejn feqn'
+    user: 'admin email',
+    pass: 'admin gmail pass'
   }
 });
 
@@ -42,7 +42,7 @@ router.post('/book', (req, res) => {
               const { email, provider_name } = result[0];
 
               const mailOptions = {
-                from: 'ashuvadde2@gmail.com',
+                from: 'admin email',
                 to: email,
                 subject: 'Appointment Confirmation',
                 text: `Your appointment with ${provider_name} has been confirmed for ${date} at ${time}.`
@@ -198,7 +198,7 @@ router.put('/cancel/:id', (req, res) => {
       }
 
       const mailOptions = {
-        from: 'ashuvadde2@gmail.com',
+        from: 'admin email',
         to: email,
         subject: 'Appointment Cancelled',
         text: `Your appointment with ${provider_name} on ${appointment_date} at ${appointment_time} has been cancelled.`
@@ -259,7 +259,7 @@ router.put('/reschedule/:id', (req, res) => {
           }
 
           const mailOptions = {
-            from: 'ashuvadde2@gmail.com',
+            from: 'admin email',
             to: email,
             subject: 'Appointment Rescheduled',
             text: `Your appointment with ${provider_name} has been rescheduled to ${newDate} at ${newTime}.`
