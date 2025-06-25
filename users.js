@@ -11,8 +11,8 @@ const fs = require('fs');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ashuvadde2@gmail.com',
-    pass: 'xrjn xhrg mejn feqn'
+    user: 'admin email',
+    pass: 'admin pass gmail'
   }
 });
 
@@ -83,7 +83,7 @@ router.post('/forgot-password', (req, res) => {
   const token = jwt.sign({ email }, 'resetsecret', { expiresIn: '1h' });
   const link = `http://localhost:3000/reset-password/${token}`;
   transporter.sendMail({
-    from: 'ashuvadde2@gmail.com',
+    from: 'admin email',
     to: email,
     subject: 'Reset Password',
     text: `Click the link to reset your password: ${link}`
